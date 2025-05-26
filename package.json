@@ -4,9 +4,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-  "postinstall": "prisma generate",
-  "build": "prisma generate",
-  "start": "node index.js"
+    "build": "prisma generate",
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
