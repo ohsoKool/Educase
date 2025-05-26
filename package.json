@@ -4,10 +4,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon index.js",
-    "build": "npx prisma db push && npx prisma generate",
-    "start": "npx prisma generate && node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "postinstall": "prisma generate",
+  "build": "prisma generate",
+  "start": "node index.js"
   },
   "keywords": [],
   "author": "",
