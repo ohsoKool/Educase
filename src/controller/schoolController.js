@@ -55,13 +55,7 @@ export const listSchools = async (req, res) => {
         details: parsed.error.errors,
       });
     }
-    const userLat = parseFloat(req.query.latitude);
-    const userLon = parseFloat(req.query.longitude);
-
-    if (isNaN(userLat) || isNaN(userLon)) {
-      return res.status(400).json({ message: "Invalid latitude or longitude" });
-    }
-
+    const { latitude: userLat, longitude: userLon } = parsed.data; //extracting latitude and longitude directly from parsed data bacause I'm no longer using parseFloat
     const schools = await db.schools.findMany({
       select: {
         name: true,
